@@ -91,7 +91,7 @@ const Contato = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold mb-1">E-mail</h3>
-                    <p className="text-muted-foreground">contatoia@animaaagencia.com.br</p>
+                    <p className="text-muted-foreground">animaai@animaaagencia.com.br</p>
                   </div>
                 </div>
 

@@ -488,7 +488,7 @@ const Index = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold mb-1">E-mail</h4>
-                    <p className="text-muted-foreground">contatoia@animaaagencia.com.br</p>
+                    <p className="text-muted-foreground">animaai@animaaagencia.com.br</p>
                   </div>
                 </div>
 
