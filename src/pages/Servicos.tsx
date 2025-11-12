@@ -14,14 +14,15 @@ import {
   RefreshCw,
   CheckCircle2,
 } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 
 /** Dados únicos dos serviços */
 const services = [
   {
     icon: Bot,
     title: "IA para WhatsApp",
-    description: "Chatbots inteligentes que atendem seus clientes 24 horas por dia, 7 dias por semana",
+    description:
+      "Chatbots inteligentes que atendem seus clientes 24 horas por dia, 7 dias por semana",
     features: [
       "Respostas automáticas em linguagem natural",
       "Análise de intenção do cliente",
@@ -97,21 +98,21 @@ const services = [
   },
 ];
 
-// ✨ Variantes para animação
-const containerVariants = {
+// ✨ Variantes para animação (tipadas)
+const containerVariants: Variants = {
   hidden: {},
   show: {
     transition: { staggerChildren: 0.12 },
   },
 };
 
-const cardVariants = {
+const cardVariants: Variants = {
   hidden: { opacity: 0, y: 24, scale: 0.98 },
   show: {
     opacity: 1,
     y: 0,
     scale: 1,
-    transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] },
+    transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] as const },
   },
 };
 

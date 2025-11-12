@@ -2,7 +2,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { Card } from "@/components/ui/card";
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import { Lightbulb, Target, Shield, Rocket } from "lucide-react";
 
 // Dados únicos da seção Sobre
@@ -33,21 +33,21 @@ const values = [
   },
 ];
 
-// Variantes de animação
-const containerVariants = {
+// Variantes de animação (tipadas)
+const containerVariants: Variants = {
   hidden: {},
   show: {
     transition: { staggerChildren: 0.12 },
   },
 };
 
-const fadeCard = {
+const fadeCard: Variants = {
   hidden: { opacity: 0, y: 24, scale: 0.98 },
   show: {
     opacity: 1,
     y: 0,
     scale: 1,
-    transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] },
+    transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] as const },
   },
 };
 
@@ -138,7 +138,10 @@ export const AboutSection = () => {
         whileInView="show"
         viewport={{ once: true, amount: 0.2 }}
       >
-        <motion.h3 className="text-2xl md:text-3xl font-bold text-center mb-12" variants={fadeCard}>
+        <motion.h3
+          className="text-2xl md:text-3xl font-bold text-center mb-12"
+          variants={fadeCard}
+        >
           Nossa <span className="text-third">História</span>
         </motion.h3>
 

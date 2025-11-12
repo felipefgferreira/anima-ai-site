@@ -83,7 +83,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center space-x-2 text-muted-foreground">
                 <MapPin size={16} />
-                <span className="text-sm">São Paulo, SP</span>
+                <span className="text-sm">Florianopólis, SC</span>
               </li>
             </ul>
           </div>
@@ -91,7 +91,7 @@ const Footer = () => {
 
         <div className="border-t border-primary/20 mt-8 pt-8 text-center">
           <p className="text-muted-foreground text-sm">
-            © 2024 Ânima AI. CNPJ: 00.000.000/0001-00. Todos os direitos reservados.
+            © 2025 Ânima AI. CNPJ: 52.980.213/0001-20. Todos os direitos reservados.
           </p>
         </div>
       </div>

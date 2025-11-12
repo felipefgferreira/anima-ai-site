@@ -1,11 +1,10 @@
 import { ArrowRight, Sparkles } from "lucide-react";
 import { Button } from "./ui/button";
-import { Link } from "react-router-dom";
 import heroBg from "@/assets/hero-bg.jpg";
 import { scrollToSection } from "@/lib/scrollToSection";
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 
-const container = {
+const container: Variants = {
   hidden: {},
   show: {
     transition: {
@@ -15,13 +14,16 @@ const container = {
   },
 };
 
-const fadeUp = {
+const fadeUp: Variants = {
   hidden: { opacity: 0, y: 14, scale: 0.995 },
   show: {
     opacity: 1,
     y: 0,
     scale: 1,
-    transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
+    transition: {
+      duration: 0.6,
+      ease: [0.22, 1, 0.36, 1] as const, // <- tupla tipada
+    },
   },
 };
 
