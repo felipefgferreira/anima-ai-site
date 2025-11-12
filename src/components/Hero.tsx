@@ -2,6 +2,7 @@ import { ArrowRight, Sparkles } from "lucide-react";
 import { Button } from "./ui/button";
 import { Link } from "react-router-dom";
 import heroBg from "@/assets/hero-bg.jpg";
+import { scrollToSection } from "@/lib/scrollToSection";
 
 const Hero = () => {
   return (
@@ -33,8 +34,8 @@ const Hero = () => {
           </div>
 
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 animate-fade-in">
-            <span className="text-foreground">Automatize. Escale. </span>
-            <span className="text-primary">Lucre.</span>
+            <span className="text-muted">Automatize, escale </span>
+            <span className="text-primary">e lucre!</span>
           </h1>
 
           <p className="text-xl md:text-2xl text-muted-foreground mb-8 animate-fade-in">
@@ -47,13 +48,18 @@ const Hero = () => {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in">
             <Button size="lg" asChild className="group">
-              <Link to="/contato">
+              <a href="#contato" onClick={(e) => scrollToSection(e, "#contato")}>
                 Falar com Especialista
-                <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
-              </Link>
+                <ArrowRight
+                  className="ml-2 group-hover:translate-x-1 transition-transform"
+                  size={20}
+                />
+              </a>
             </Button>
-            <Button size="lg" variant="outline" asChild className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
-              <Link to="/servicos">Conhecer Soluções</Link>
+            <Button size="lg" variant="outline" asChild className="border-primary hover:bg-primary hover:text-primary-foreground"            >
+              <a href="#servicos" onClick={(e) => scrollToSection(e, "#servicos")}>
+                Conhecer Soluções
+              </a>
             </Button>
           </div>
         </div>

@@ -9,10 +9,10 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
-import { 
-  CheckCircle2, 
-  Zap, 
-  Target, 
+import {
+  CheckCircle2,
+  Zap,
+  Target,
   TrendingUp,
   Lightbulb,
   Shield,
@@ -62,7 +62,7 @@ const Index = () => {
   const values = [
     {
       icon: Lightbulb,
-      title: "Inovação",
+      title: "Inovação e Proatividade",
       description: "Buscamos constantemente as mais avançadas tecnologias de IA para entregar soluções de ponta",
     },
     {
@@ -218,7 +218,7 @@ const Index = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!formData.name || !formData.email || !formData.whatsapp) {
       toast({
         title: "Campos obrigatórios",
@@ -276,22 +276,22 @@ const Index = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-6">
-              Sobre a <span className="text-primary">Ânima AI</span>
+              Sobre a <span className="text-third">Ânima AI</span>
             </h2>
             <Card className="p-8 md:p-12 bg-card border-primary/20">
               <h3 className="text-2xl font-bold mb-6 text-center">Nossa Missão</h3>
               <p className="text-lg text-muted-foreground text-center mb-6">
-                <strong className="text-primary">Tornar a Inteligência Artificial acessível, eficiente e lucrativa para empresas reais.</strong>
+                <strong className="text-third">Tornar a Inteligência Artificial acessível, eficiente e lucrativa para empresas reais.</strong>
               </p>
               <p className="text-muted-foreground text-center">
-                Acreditamos que toda empresa, independente do tamanho, merece ter acesso às tecnologias mais avançadas de IA. 
-                Nossa missão é democratizar o uso da Inteligência Artificial, oferecendo soluções que geram resultados práticos e mensuráveis.
+                Acreditamos que toda empresa, independente do tamanho, merece ter acesso às tecnologias mais avançadas de IA.
+                Nossa missão é tornar o uso da Inteligência Artificial acessível, oferecendo soluções que geram resultados práticos e mensuráveis.
               </p>
             </Card>
           </div>
 
           <h3 className="text-2xl md:text-3xl font-bold text-center mb-12">
-            Nossos <span className="text-primary">Valores</span>
+            Nossos <span className="text-third">Valores</span>
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto mb-16">
             {values.map((value, index) => (
@@ -306,21 +306,18 @@ const Index = () => {
           </div>
 
           <div className="max-w-4xl mx-auto">
-            <h3 className="text-2xl font-bold mb-8 text-center">Nossa História</h3>
+            <h3 className="text-2xl md:text-3xl font-bold text-center mb-12">
+            Nossa <span className="text-third">História</span>
+          </h3>
             <div className="space-y-6 text-muted-foreground">
               <p>
-                A Ânima AI nasceu da visão de que a Inteligência Artificial poderia ser mais do que uma tecnologia complexa e inacessível. 
-                Fundada por especialistas em IA e negócios, nossa empresa surgiu para preencher a lacuna entre o potencial da IA e sua aplicação prática no mundo empresarial.
+                A Ânima AI nasceu da visão de que a Inteligência Artificial pode ser muito mais do que uma tecnologia complexa e inacessível.
+                Fundada por entusiastas de IA e negócios que se especializaram na área, nossa empresa surgiu para preencher a lacuna entre o potencial da IA e sua aplicação prática no mundo empresarial.
               </p>
               <p>
-                Desde o início, focamos em desenvolver soluções que entregam resultados reais: aumento de vendas, redução de custos, 
-                melhoria no atendimento ao cliente e otimização de processos. Cada projeto é uma oportunidade de provar que a IA, 
+                Desde o início, focamos em desenvolver soluções que entregam resultados reais: aumento de vendas, redução de custos,
+                melhoria no atendimento ao cliente e otimização de processos. Cada projeto é uma oportunidade de provar que a IA,
                 quando bem implementada, transforma negócios.
-              </p>
-              <p>
-                Hoje, atendemos empresas de diversos segmentos, sempre com o compromisso de entregar tecnologia de ponta 
-                aliada a um profundo entendimento das necessidades de cada cliente. Nossa jornada é guiada pela inovação constante 
-                e pelo impacto positivo que geramos nos negócios dos nossos parceiros.
               </p>
             </div>
           </div>
@@ -331,7 +328,7 @@ const Index = () => {
       <section id="servicos" className="py-20 bg-dark-graphite">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
               Nossas <span className="text-primary">Soluções de IA</span>
             </h2>
             <p className="text-xl text-muted-foreground">
@@ -377,11 +374,10 @@ const Index = () => {
             {plans.map((plan, index) => (
               <Card
                 key={index}
-                className={`p-8 relative animate-fade-in hover-scale ${
-                  plan.highlighted
-                    ? "border-primary border-2 shadow-lg shadow-primary/20"
-                    : "border-border"
-                }`}
+                className={`p-8 relative animate-fade-in hover-scale ${plan.highlighted
+                  ? "border-primary border-2 shadow-lg shadow-primary/20"
+                  : "border-border"
+                  }`}
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 {plan.highlighted && (
@@ -415,9 +411,8 @@ const Index = () => {
 
                 <Button
                   variant={plan.highlighted ? "default" : "outline"}
-                  className={`w-full ${
-                    !plan.highlighted ? "border-primary text-primary hover:bg-primary hover:text-primary-foreground" : ""
-                  }`}
+                  className={`w-full ${!plan.highlighted ? "border-primary text-primary hover:bg-primary hover:text-primary-foreground" : ""
+                    }`}
                   asChild
                 >
                   <a href="#contato" onClick={(e) => {
@@ -439,21 +434,21 @@ const Index = () => {
               <Card className="p-6">
                 <h4 className="text-lg font-semibold mb-2">Posso mudar de plano depois?</h4>
                 <p className="text-muted-foreground">
-                  Sim! Você pode fazer upgrade ou downgrade do seu plano a qualquer momento. 
+                  Sim! Você pode fazer upgrade ou downgrade do seu plano a qualquer momento.
                   As mudanças entram em vigor no próximo ciclo de faturamento.
                 </p>
               </Card>
               <Card className="p-6">
                 <h4 className="text-lg font-semibold mb-2">Existe período de teste?</h4>
                 <p className="text-muted-foreground">
-                  Oferecemos demonstração gratuita para você conhecer nossas soluções antes de contratar. 
+                  Oferecemos demonstração gratuita para você conhecer nossas soluções antes de contratar.
                   Entre em contato para agendar.
                 </p>
               </Card>
               <Card className="p-6">
                 <h4 className="text-lg font-semibold mb-2">Como funciona a implementação?</h4>
                 <p className="text-muted-foreground">
-                  Nossa equipe cuida de todo o processo: desde a configuração inicial até o treinamento da IA 
+                  Nossa equipe cuida de todo o processo: desde a configuração inicial até o treinamento da IA
                   com os dados do seu negócio. O prazo médio é de 7 a 14 dias.
                 </p>
               </Card>
@@ -478,7 +473,7 @@ const Index = () => {
             <div>
               <h3 className="text-2xl font-bold mb-6">Fale Conosco</h3>
               <p className="text-muted-foreground mb-8">
-                Nossa equipe de especialistas está pronta para entender suas necessidades 
+                Nossa equipe de especialistas está pronta para entender suas necessidades
                 e apresentar a melhor solução de IA para o seu negócio.
               </p>
 

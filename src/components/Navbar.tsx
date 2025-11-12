@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "./ui/button";
+import { scrollToSection } from "@/lib/scrollToSection";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,27 +15,19 @@ const Navbar = () => {
   ];
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, path: string) => {
-    e.preventDefault();
-    const sectionId = path.replace('#', '');
-    const element = document.getElementById(sectionId);
-    if (element) {
-      const offset = 80;
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - offset;
-      
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
-      setIsOpen(false);
-    }
+    scrollToSection(e, path);
+    setIsOpen(false);
   };
 
   return (
     <nav className="fixed top-0 w-full bg-dark-graphite/95 backdrop-blur-sm z-50 border-b border-primary/20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          <a href="#home" onClick={(e) => handleNavClick(e, "#home")} className="flex items-center space-x-2">
+          <a
+            href="#home"
+            onClick={(e) => handleNavClick(e, "#home")}
+            className="flex items-center space-x-2"
+          >
             <span className="text-2xl font-bold text-primary">Ânima</span>
             <span className="text-2xl font-bold text-white">AI</span>
           </a>
