@@ -3,6 +3,27 @@ import { Button } from "./ui/button";
 import { Link } from "react-router-dom";
 import heroBg from "@/assets/hero-bg.jpg";
 import { scrollToSection } from "@/lib/scrollToSection";
+import { motion } from "framer-motion";
+
+const container = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.12,
+      delayChildren: 0.1,
+    },
+  },
+};
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 14, scale: 0.995 },
+  show: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
+  },
+};
 
 const Hero = () => {
   return (
@@ -14,39 +35,68 @@ const Hero = () => {
           alt="AI Technology Background"
           className="w-full h-full object-cover opacity-30"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-dark-graphite via-dark-graphite/95 to-dark-graphite"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-dark-graphite via-dark-graphite/95 to-dark-graphite" />
       </div>
 
       {/* Animated Grid Pattern */}
       <div className="absolute inset-0 z-0 opacity-20">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `linear-gradient(hsl(var(--neon-green) / 0.1) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--neon-green) / 0.1) 1px, transparent 1px)`,
-          backgroundSize: '50px 50px'
-        }}></div>
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage:
+              `linear-gradient(hsl(var(--neon-green) / 0.1) 1px, transparent 1px),
+               linear-gradient(90deg, hsl(var(--neon-green) / 0.1) 1px, transparent 1px)`,
+            backgroundSize: "50px 50px",
+          }}
+        />
       </div>
 
       {/* Content */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-20">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center space-x-2 bg-primary/10 border border-primary/30 rounded-full px-4 py-2 mb-8 animate-fade-in">
+        <motion.div
+          className="max-w-4xl mx-auto text-center"
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.4 }}
+        >
+          <motion.div
+            variants={fadeUp}
+            className="inline-flex items-center space-x-2 bg-primary/10 border border-primary/30 rounded-full px-4 py-2 mb-8"
+          >
             <Sparkles className="text-primary" size={20} />
-            <span className="text-sm font-medium text-primary">Tecnologia de IA Avançada</span>
-          </div>
+            <span className="text-sm font-medium text-primary">
+              Tecnologia de IA Avançada
+            </span>
+          </motion.div>
 
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 animate-fade-in">
+          <motion.h1
+            variants={fadeUp}
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6"
+          >
             <span className="text-muted">Automatize, escale </span>
             <span className="text-primary">e lucre!</span>
-          </h1>
+          </motion.h1>
 
-          <p className="text-xl md:text-2xl text-muted-foreground mb-8 animate-fade-in">
+          <motion.p
+            variants={fadeUp}
+            className="text-xl md:text-2xl text-muted-foreground mb-8"
+          >
             IA feita para o seu negócio
-          </p>
+          </motion.p>
 
-          <p className="text-base md:text-lg text-muted-foreground mb-12 max-w-2xl mx-auto animate-fade-in">
-            Transforme sua empresa com soluções de Inteligência Artificial que automatizam processos, aumentam vendas e reduzem custos operacionais.
-          </p>
+          <motion.p
+            variants={fadeUp}
+            className="text-base md:text-lg text-muted-foreground mb-12 max-w-2xl mx-auto"
+          >
+            Transforme sua empresa com soluções de Inteligência Artificial que
+            automatizam processos, aumentam vendas e reduzem custos operacionais.
+          </motion.p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in">
+          <motion.div
+            variants={fadeUp}
+            className="flex flex-col sm:flex-row gap-4 justify-center"
+          >
             <Button size="lg" asChild className="group">
               <a href="#contato" onClick={(e) => scrollToSection(e, "#contato")}>
                 Falar com Especialista
@@ -56,19 +106,25 @@ const Hero = () => {
                 />
               </a>
             </Button>
-            <Button size="lg" variant="outline" asChild className="border-primary hover:bg-primary hover:text-primary-foreground"            >
+
+            <Button
+              size="lg"
+              variant="outline"
+              asChild
+              className="border-primary hover:bg-primary hover:text-primary-foreground"
+            >
               <a href="#servicos" onClick={(e) => scrollToSection(e, "#servicos")}>
                 Conhecer Soluções
               </a>
             </Button>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
 
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10 animate-bounce">
+      {/* Scroll Indicator (já animado) */}
+      <div className="absolute bottom-8 z-10 animate-bounce">
         <div className="w-6 h-10 border-2 border-primary rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-primary rounded-full mt-2 animate-pulse"></div>
+          <div className="w-1 h-3 bg-primary rounded-full mt-2 animate-pulse" />
         </div>
       </div>
     </section>

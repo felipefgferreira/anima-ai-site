@@ -131,7 +131,7 @@ const Index = () => {
       <section id="contato" className="py-20 bg-dark-graphite">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
               Entre em <span className="text-primary">Contato</span>
             </h2>
             <p className="text-xl text-muted-foreground">
@@ -141,7 +141,7 @@ const Index = () => {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
             <div>
-              <h3 className="text-2xl font-bold mb-6">Fale Conosco</h3>
+              <h3 className="text-2xl font-bold mb-6 text-white">Fale Conosco</h3>
               <p className="text-muted-foreground mb-8">
                 Nossa equipe de especialistas está pronta para entender suas necessidades
                 e apresentar a melhor solução de IA para o seu negócio.
@@ -153,8 +153,8 @@ const Index = () => {
                     <Mail className="text-primary" size={20} />
                   </div>
                   <div>
-                    <h4 className="font-semibold mb-1">E-mail</h4>
-                    <p className="text-muted-foreground">animaai@animaaagencia.com.br</p>
+                    <h4 className="font-semibold mb-1 text-muted-foreground">E-mail</h4>
+                    <p className="text-white">animaai@animaaagencia.com.br</p>
                   </div>
                 </div>
 
@@ -163,8 +163,8 @@ const Index = () => {
                     <Phone className="text-primary" size={20} />
                   </div>
                   <div>
-                    <h4 className="font-semibold mb-1">Telefone / WhatsApp</h4>
-                    <p className="text-muted-foreground">(44) 99853-7443</p>
+                    <h4 className="font-semibold mb-1 text-muted-foreground">Telefone / WhatsApp</h4>
+                    <p className="text-white">(44) 99853-7443</p>
                   </div>
                 </div>
 
@@ -173,17 +173,14 @@ const Index = () => {
                     <MapPin className="text-primary" size={20} />
                   </div>
                   <div>
-                    <h4 className="font-semibold mb-1">Localização</h4>
-                    <p className="text-muted-foreground">Florianópolis, SC - Brasil</p>
+                    <h4 className="font-semibold mb-1 text-muted-foreground">Localização</h4>
+                    <p className="text-white">Florianópolis, SC - Brasil</p>
                   </div>
                 </div>
               </div>
 
               <div className="mt-8">
-                <Button onClick={handleWhatsAppClick} className="w-full sm:w-auto">
-                  <Phone className="mr-2" size={18} />
-                  Conversar no WhatsApp
-                </Button>
+                
               </div>
             </div>
 
