@@ -30,7 +30,7 @@ import {
 } from "lucide-react";
 
 // 👉 importa apenas a seção reutilizável (sem Navbar/Footer) da página de Planos
-import { PricingSection } from "@/pages/Planos";
+import { ProcessSection } from "@/pages/Planos";
 
 const Index = () => {
   const { toast } = useToast();
@@ -307,7 +307,7 @@ const Index = () => {
 
       {/* Planos Section (reutilizando a seção da página Planos) */}
       <section id="planos" className="py-20 bg-background">
-        <PricingSection />
+        <ProcessSection />
       </section>
 
       {/* Contato Section */}
