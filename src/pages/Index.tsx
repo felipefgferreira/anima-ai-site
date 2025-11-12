@@ -259,7 +259,7 @@ const Index = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {benefits.map((benefit, index) => (
-              <div key={index} className="text-center">
+              <div key={index} className="text-center animate-fade-in hover-scale" style={{ animationDelay: `${index * 0.1}s` }}>
                 <div className="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                   <benefit.icon className="text-primary" size={32} />
                 </div>
@@ -295,7 +295,7 @@ const Index = () => {
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto mb-16">
             {values.map((value, index) => (
-              <Card key={index} className="p-6 bg-card hover:border-primary/50 transition-all">
+              <Card key={index} className="p-6 bg-card hover:border-primary/50 transition-all animate-fade-in hover-scale" style={{ animationDelay: `${index * 0.1}s` }}>
                 <div className="bg-primary/10 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
                   <value.icon className="text-primary" size={24} />
                 </div>
@@ -331,7 +331,7 @@ const Index = () => {
       <section id="servicos" className="py-20 bg-dark-graphite">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-primary">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
               Nossas <span className="text-primary">Soluções de IA</span>
             </h2>
             <p className="text-xl text-muted-foreground">
@@ -341,7 +341,7 @@ const Index = () => {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {services.map((service, index) => (
-              <Card key={index} className="p-8 hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10">
+              <Card key={index} className="p-8 hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10 animate-fade-in hover-scale" style={{ animationDelay: `${index * 0.1}s` }}>
                 <div className="bg-primary/10 w-14 h-14 rounded-lg flex items-center justify-center mb-4">
                   <service.icon className="text-primary" size={28} />
                 </div>
@@ -377,11 +377,12 @@ const Index = () => {
             {plans.map((plan, index) => (
               <Card
                 key={index}
-                className={`p-8 relative ${
+                className={`p-8 relative animate-fade-in hover-scale ${
                   plan.highlighted
                     ? "border-primary border-2 shadow-lg shadow-primary/20"
                     : "border-border"
                 }`}
+                style={{ animationDelay: `${index * 0.1}s` }}
               >
                 {plan.highlighted && (
                   <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">

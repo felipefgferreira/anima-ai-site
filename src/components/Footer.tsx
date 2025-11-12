@@ -1,7 +1,21 @@
 import { Mail, Phone, MapPin, Facebook, Instagram, Linkedin } from "lucide-react";
-import { Link } from "react-router-dom";
 
 const Footer = () => {
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
+    e.preventDefault();
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const offset = 80;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - offset;
+      
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   return (
     <footer className="bg-dark-graphite text-foreground py-12 border-t border-primary/20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -33,24 +47,24 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-4 text-primary">Links Rápidos</h3>
             <ul className="space-y-2">
               <li>
-                <Link to="/" className="text-muted-foreground hover:text-primary transition-colors">
+                <a href="#home" onClick={(e) => handleNavClick(e, 'home')} className="text-muted-foreground hover:text-primary transition-colors">
                   Home
-                </Link>
+                </a>
               </li>
               <li>
-                <Link to="/sobre" className="text-muted-foreground hover:text-primary transition-colors">
+                <a href="#sobre" onClick={(e) => handleNavClick(e, 'sobre')} className="text-muted-foreground hover:text-primary transition-colors">
                   Sobre Nós
-                </Link>
+                </a>
               </li>
               <li>
-                <Link to="/servicos" className="text-muted-foreground hover:text-primary transition-colors">
+                <a href="#servicos" onClick={(e) => handleNavClick(e, 'servicos')} className="text-muted-foreground hover:text-primary transition-colors">
                   Serviços
-                </Link>
+                </a>
               </li>
               <li>
-                <Link to="/planos" className="text-muted-foreground hover:text-primary transition-colors">
+                <a href="#planos" onClick={(e) => handleNavClick(e, 'planos')} className="text-muted-foreground hover:text-primary transition-colors">
                   Planos
-                </Link>
+                </a>
               </li>
             </ul>
           </div>
@@ -61,7 +75,7 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-center space-x-2 text-muted-foreground">
                 <Mail size={16} />
-                <span className="text-sm">animaai@animaaagencia.com.br</span>
+                <span className="text-sm">contato@animaai.com.br</span>
               </li>
               <li className="flex items-center space-x-2 text-muted-foreground">
                 <Phone size={16} />
@@ -69,7 +83,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center space-x-2 text-muted-foreground">
                 <MapPin size={16} />
-                <span className="text-sm">Florianópolis, SC</span>
+                <span className="text-sm">São Paulo, SP</span>
               </li>
             </ul>
           </div>
@@ -77,7 +91,7 @@ const Footer = () => {
 
         <div className="border-t border-primary/20 mt-8 pt-8 text-center">
           <p className="text-muted-foreground text-sm">
-            © 2025 Ânima AI. CNPJ: 52.980.213/0001-20. Todos os direitos reservados.
+            © 2024 Ânima AI. CNPJ: 00.000.000/0001-00. Todos os direitos reservados.
           </p>
         </div>
       </div>
