@@ -75,7 +75,7 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-center space-x-2 text-muted-foreground">
                 <Mail size={16} />
-                <span className="text-sm">contato@animaai.com.br</span>
+                <span className="text-sm">animaai@animaaagencia.com.br</span>
               </li>
               <li className="flex items-center space-x-2 text-muted-foreground">
                 <Phone size={16} />
