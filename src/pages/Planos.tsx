@@ -96,7 +96,8 @@ export const ProcessSection = () => {
 
       {/* Process Cards */}
       <motion.div
-        className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto mb-16"
+        // 1. items-stretch garante altura igual na linha do grid
+        className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto mb-16 items-stretch"
         variants={containerVariants}
         initial="hidden"
         whileInView="show"
@@ -108,10 +109,14 @@ export const ProcessSection = () => {
             variants={cardVariants}
             whileHover={{ scale: 1.02, y: -2 }}
             transition={{ type: "spring", stiffness: 300, damping: 20 }}
-            className="will-change-transform"
+            // 2. h-full faz o wrapper ocupar a altura do grid
+            className="will-change-transform h-full"
           >
             <Card
-              className={`p-8 relative transition-shadow duration-300 ${
+              className={`p-8 relative transition-shadow duration-300 
+                /* 3. h-full ocupa o wrapper, flex-col organiza o conteudo */
+                h-full flex flex-col
+                ${
                 path.highlighted
                   ? "border-primary border-2 shadow-lg shadow-primary/20"
                   : "border-border hover:shadow-xl"
@@ -134,7 +139,8 @@ export const ProcessSection = () => {
                 <p className="text-muted-foreground text-sm">{path.description}</p>
               </div>
 
-              <ul className="space-y-3 mb-8">
+              {/* 4. mt-auto joga a lista e o botão para o fundo do card */}
+              <ul className="space-y-3 mb-8 mt-auto">
                 {path.details.map((item, idx) => (
                   <li key={idx} className="flex items-start space-x-2">
                     <CheckCircle2 className="text-primary mt-0.5 flex-shrink-0" size={18} />
