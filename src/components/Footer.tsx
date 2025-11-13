@@ -1,4 +1,5 @@
-import { Mail, Phone, MapPin, Facebook, Instagram, Linkedin } from "lucide-react";
+import { Mail, Phone, MapPin, Facebook, Instagram, Linkedin, WheatIcon } from "lucide-react";
+import WhatsAppButton from "./WhatsAppButton";
 
 const Footer = () => {
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
@@ -30,14 +31,11 @@ const Footer = () => {
               Soluções de Inteligência Artificial que automatizam, escalam e geram lucro para o seu negócio.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+              {/* <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
                 <Facebook size={20} />
-              </a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+              </a> */}
+              <a href="https://www.instagram.com/animaai.com.br/" className="text-muted-foreground hover:text-primary transition-colors">
                 <Instagram size={20} />
-              </a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                <Linkedin size={20} />
               </a>
             </div>
           </div>
