@@ -76,8 +76,8 @@ const Hero = () => {
             variants={fadeUp}
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6"
           >
-            <span className="text-muted">Automatize, escale </span>
-            <span className="text-primary">e lucre!</span>
+            <span className="text-muted">Automatize processos, escale </span>
+            <span className="text-primary">e lucre</span>
           </motion.h1>
 
           <motion.p
@@ -89,7 +89,7 @@ const Hero = () => {
 
           <motion.p
             variants={fadeUp}
-            className="text-base md:text-lg text-muted-foreground mb-12 max-w-2xl mx-auto"
+            className="text-base md:text-xl text-muted-foreground mb-12 max-w-2xl mx-auto"
           >
             Transforme sua empresa com soluções de Inteligência Artificial que
             automatizam processos, aumentam vendas e reduzem custos operacionais.
